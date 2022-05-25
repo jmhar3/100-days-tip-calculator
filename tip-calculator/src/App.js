@@ -52,27 +52,27 @@ function App() {
   console.log(calculatorValues);
 
   const tipAmount = useMemo(() => {
-   if (bill && tip && people) {
-    return (parseFloat(bill) * tip) / people;
-   } else {
-    return "0.00"
-   }
+    if (bill && tip && people) {
+      return ((parseFloat(bill) * tip) / people).toFixed(2);
+    } else {
+      return "0.00";
+    }
   }, [bill, tip, people]);
 
   const totalAmount = useMemo(() => {
-   if (bill && tip && people) {
-    return (bill * (tip + 1)) / people;
-   } else {
-    return "0.00"
-   }
+    if (bill && tip && people) {
+      return ((bill * (tip + 1)) / people).toFixed(2);
+    } else {
+      return "0.00";
+    }
   }, [bill, tip, people]);
 
   return (
     <div id="calculator" className="container">
       <div id="inputs" className="container">
-        <BillTotal setBill={setBill} />
+        <BillTotal bill={calculatorValues.bill} setBill={setBill} />
         <TipSelect setTip={setTip} />
-        <PeopleTotal setPeople={setPeople} />
+        <PeopleTotal people={calculatorValues.people} setPeople={setPeople} />
       </div>
       <div id="totals" className="container">
         <TipPerPerson tipAmount={tipAmount} />

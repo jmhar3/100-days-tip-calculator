@@ -1,5 +1,5 @@
-export const ResetButton = () => {
+export const ResetButton = ({onResetClick}) => {
  return (
-   <button>RESET</button>
+   <button onClick={onResetClick}>RESET</button>
  );
 };

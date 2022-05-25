@@ -1,7 +1,7 @@
 import iconDollar from "../images/icon-dollar.svg";
 import { useCallback } from "react";
 
-export const BillTotal = ({ setBill }) => {
+export const BillTotal = ({ setBill, bill }) => {
   const onChange = useCallback(
     (event) => {
      event.target.value === "" ? setBill(0) : setBill(parseInt(event.target.value));
@@ -14,7 +14,7 @@ export const BillTotal = ({ setBill }) => {
       <p>Bill</p>
       <div className="input-container">
         <img src={iconDollar} />
-        <input type="number" placeholder="0" onChange={onChange} />
+        <input type="number" value={bill} onChange={onChange} />
       </div>
     </div>
   );

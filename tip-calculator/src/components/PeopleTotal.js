@@ -1,7 +1,7 @@
 import iconPerson from "../images/icon-person.svg";
 import { useCallback } from "react";
 
-export const PeopleTotal = ({ setPeople }) => {
+export const PeopleTotal = ({ setPeople, people }) => {
   const onChange = useCallback(
     (event) => {
       event.target.value === "" ? setPeople(0) : setPeople(parseInt(event.target.value));
@@ -13,7 +13,7 @@ export const PeopleTotal = ({ setPeople }) => {
       <p>Number of people</p>
       <div className="input-container">
         <img src={iconPerson} />
-        <input type="number" placeholder="0" onChange={onChange} />
+        <input type="number" value={people} onChange={onChange} />
       </div>
     </div>
   );
