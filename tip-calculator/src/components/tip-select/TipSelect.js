@@ -5,7 +5,7 @@ export const TipSelect = () => {
   return (
     <div>
       <p>Select Tip %</p>
-      <div>
+      <div id="tip-selects">
         <TipButton percentage="5" />
         <TipButton percentage="10" />
         <TipButton percentage="15" />
