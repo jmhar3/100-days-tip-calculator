@@ -1,93 +1,116 @@
 :root {
- --primary-cyan: hsl(172, 67%, 45%);
- --neutral-dark-cyan: hsl(183, 100%, 15%);
- --neutral-dark-gray-cyan: hsl(186, 14%, 43%);
- --neutral-gray-cyan: hsl(184, 14%, 56%);
- --neutral-light-gray-cyan: hsl(185, 41%, 84%);
- --neutral-very-light-gray-cyan: hsl(189, 41%, 97%);
- --white: hsl(0, 0%, 100%);
+  --primary-cyan: hsl(172, 67%, 45%);
+  --neutral-dark-cyan: hsl(183, 100%, 15%);
+  --neutral-dark-gray-cyan: hsl(186, 14%, 43%);
+  --neutral-gray-cyan: hsl(184, 14%, 56%);
+  --neutral-light-gray-cyan: hsl(185, 41%, 84%);
+  --neutral-very-light-gray-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
 }
 
 * {
- margin: 0;
- padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {
- font-family: SpaceMono;
- src: url("./fonts/SpaceMono-Regular.ttf");
+  font-family: SpaceMono;
+  src: url("./fonts/SpaceMono-Regular.ttf");
 }
 
 @font-face {
- font-family: SpaceMonoBold;
- src: url("./fonts/SpaceMono-Bold.ttf");
+  font-family: SpaceMonoBold;
+  src: url("./fonts/SpaceMono-Bold.ttf");
 }
 
-h1, h2, h3, h4, h5, p {
- font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-weight: 700;
 }
 
-input, button {
- font-size: 24px;
+input,
+button {
+  font-size: 24px;
+  font-family: SpaceMonoBold;
+  border: 0;
+  border-radius: 5px;
 }
 
 body {
- background-color: var(--neutral-light-gray-cyan);
+  background-color: var(--neutral-light-gray-cyan);
 }
 
 #calculator {
- height: fit-content;
- width: fit-content;
- background-color: white;
- display: flex;
- flex-direction: row;
- border-radius: 24px;
- padding: 30px;
+  height: fit-content;
+  width: fit-content;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 24px;
+  padding: 30px;
 }
 
 #inputs {
-
+ width: 360px;
 }
 
 #totals {
- font-family: SpaceMonoBold;
- border-radius: 24px;
- background-color: var(--neutral-dark-cyan);
- padding: 30px;
+  font-family: SpaceMonoBold;
+  width: 300px;
+  border-radius: 24px;
+  background-color: var(--neutral-dark-cyan);
+  padding: 30px;
 }
 
 #totals h1 {
- color: var(--primary-cyan);
+  color: var(--primary-cyan);
 }
 
 #totals h4 {
- color: var(--neutral-very-light-gray-cyan);
+  color: var(--neutral-very-light-gray-cyan);
 }
 
 #totals p {
- color: var(--neutral-gray-cyan);
+  color: var(--neutral-gray-cyan);
 }
 
 #totals button {
- font-family: SpaceMonoBold;
- background-color: var(--primary-cyan);
- border: 0;
- border-radius: 5px;
- padding: 12px;
- width: 100%;
- color: var(--neutral-dark-cyan);
+  background-color: var(--primary-cyan);
+  width: 100%;
+  color: var(--neutral-dark-cyan);
+  padding: 12px;
 }
 
 .per-person {
- display: flex;
+  display: flex;
+  justify-content: space-between;
 }
 
 #tip-selects {
- display: flex;
- flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-#tip-selects input, #tip-selects button {
- flex-basis: 30%;
- width: 30%;
+#tip-selects input,
+#tip-selects button {
+  flex-basis: 30%;
+  width: 30%;
+}
+
+#tip-selects button {
+  background-color: var(--neutral-dark-cyan);
+  padding: 3px;
+  color: var(--neutral-very-light-gray-cyan);
+}
+
+#tip-selects input {
+  padding: 3px;
+  text-align: center;
+  background-color: var(--neutral-very-light-gray-cyan);
+  color: var(--neutral-gray-cyan);
 }
