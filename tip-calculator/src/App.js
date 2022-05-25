@@ -49,12 +49,22 @@ function App() {
     setCalculatorValues(baseValues);
   }, [setCalculatorValues]);
 
+  console.log(calculatorValues);
+
   const tipAmount = useMemo(() => {
+   if (bill && tip && people) {
     return (parseFloat(bill) * tip) / people;
+   } else {
+    return "0.00"
+   }
   }, [bill, tip, people]);
 
   const totalAmount = useMemo(() => {
+   if (bill && tip && people) {
     return (bill * (tip + 1)) / people;
+   } else {
+    return "0.00"
+   }
   }, [bill, tip, people]);
 
   return (

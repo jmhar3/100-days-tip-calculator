@@ -1,5 +1,5 @@
-export const CustomTip = () => {
+export const CustomTip = ({onChange}) => {
  return (
-   <input placeholder="Custom"/>
+   <input placeholder="Custom" onChange={onChange}/>
  );
 };
