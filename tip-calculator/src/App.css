@@ -53,6 +53,7 @@ body {
   width: fit-content;
   background-color: white;
   display: flex;
+  gap: 30px;
   flex-direction: row;
   border-radius: 24px;
   padding: 30px;
@@ -60,6 +61,9 @@ body {
 
 #inputs {
  width: 360px;
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
 }
 
 #totals {
@@ -68,6 +72,9 @@ body {
   border-radius: 24px;
   background-color: var(--neutral-dark-cyan);
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 #totals h1 {
