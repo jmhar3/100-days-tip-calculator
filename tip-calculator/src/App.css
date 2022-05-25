@@ -33,7 +33,7 @@ p {
 }
 
 input,
-button {
+button, .input-container {
   font-size: 24px;
   font-family: SpaceMonoBold;
   border: 0;
@@ -113,4 +113,22 @@ body {
   text-align: center;
   background-color: var(--neutral-very-light-gray-cyan);
   color: var(--neutral-gray-cyan);
+}
+
+.input-container {
+ background-color: var(--neutral-very-light-gray-cyan);
+ color: var(--neutral-gray-cyan);
+ padding: 3px;
+ display: flex;
+ justify-content: space-between;
+}
+
+.input-container img {
+ object-fit: contain;
+}
+
+.input-container input {
+ width: fit-content;
+ background-color: var(--neutral-very-light-gray-cyan);
+ color: var(--neutral-gray-cyan);
 }
