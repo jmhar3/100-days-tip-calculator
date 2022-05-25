@@ -2,7 +2,7 @@ export const BillTotal = () => {
   return (
     <div>
       <p>Bill</p>
-      <input type="number" />
+      <input type="decimal" />
     </div>
   );
 };

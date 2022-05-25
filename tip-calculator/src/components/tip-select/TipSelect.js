@@ -1,5 +1,5 @@
-import TipButton from "./TipButton";
-import CustomTip from "CustomTip"
+import { TipButton } from "./TipButton";
+import { CustomTip } from "./CustomTip";
 
 export const TipSelect = () => {
   return (
@@ -11,7 +11,7 @@ export const TipSelect = () => {
         <TipButton percentage="15" />
         <TipButton percentage="25" />
         <TipButton percentage="50" />
-        <CustomTip/>
+        <CustomTip />
       </div>
     </div>
   );
