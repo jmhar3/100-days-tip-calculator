@@ -14,7 +14,7 @@ export const BillTotal = ({ setBill, bill }) => {
       <p>Bill</p>
       <div className="input-container">
         <img src={iconDollar} />
-        <input type="number" value={bill} onChange={onChange} />
+        <input type="number" placeholder="0" onChange={onChange} />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ export const PeopleTotal = ({ setPeople, people }) => {
       <p>Number of people</p>
       <div className="input-container">
         <img src={iconPerson} />
-        <input type="number" value={people} onChange={onChange} />
+        <input type="number" placeholder="0" onChange={onChange} />
       </div>
     </div>
   );
