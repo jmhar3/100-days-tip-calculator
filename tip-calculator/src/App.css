@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
+:root {
+ --primary-cyan: hsl(172, 67%, 45%);
+ --neutral-dark-cyan: hsl(183, 100%, 15%);
+ --neutral-dark-gray-cyan: hsl(186, 14%, 43%);
+ --neutral-gray-cyan: hsl(184, 14%, 56%);
+ --neutral-light-gray-cyan: hsl(185, 41%, 84%);
+ --neutral-very-light-gray-cyan: hsl(189, 41%, 97%);
+ --white: hsl(0, 0%, 100%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+ margin: 0;
+ padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+ font-family: SpaceMono;
+ src: url("./fonts/SpaceMono-Regular.ttf");
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+ font-family: SpaceMonoBold;
+ src: url("./fonts/SpaceMono-Bold.ttf");
 }
 
-.App-link {
-  color: #61dafb;
+h1, h2, h3, h4, h5, p {
+ font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+ font-size: 24px;
+}
+
+body {
+ background-color: var(--neutral-light-gray-cyan);
+}
+
+#calculator {
+ height: fit-content;
+ width: fit-content;
+ background-color: white;
+ display: flex;
+ flex-direction: row;
+ border-radius: 24px;
+ padding: 30px;
+}
+
+#inputs {
+
+}
+
+#totals {
+ font-family: SpaceMonoBold;
+ border-radius: 24px;
+ background-color: var(--neutral-dark-cyan);
+ padding: 30px;
+}
+
+#totals h1 {
+ color: var(--primary-cyan);
+}
+
+#totals h4 {
+ color: var(--neutral-very-light-gray-cyan);
+}
+
+#totals p {
+ color: var(--neutral-gray-cyan);
+}
+
+#totals button {
+ font-family: SpaceMonoBold;
+ background-color: var(--primary-cyan);
+ border: 0;
+ border-radius: 5px;
+ padding: 12px;
+ width: 100%;
+ color: var(--neutral-dark-cyan);
+}
+
+.per-person {
+ display: flex;
 }
