@@ -40,6 +40,10 @@ button, .input-container {
   border-radius: 5px;
 }
 
+button {
+ cursor: pointer;
+}
+
 body {
   background-color: var(--neutral-light-gray-cyan);
 }
