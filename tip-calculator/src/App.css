@@ -30,10 +30,11 @@ h4,
 h5,
 p {
   font-weight: 700;
+  font-family: SpaceMono;
 }
 
 input,
-button, .input-container {
+button {
   font-size: 24px;
   font-family: SpaceMonoBold;
   border: 0;
@@ -41,11 +42,12 @@ button, .input-container {
 }
 
 button {
- cursor: pointer;
+  cursor: pointer;
 }
 
 body {
   background-color: var(--neutral-light-gray-cyan);
+  height: 100%;
 }
 
 #calculator {
@@ -57,18 +59,22 @@ body {
   flex-direction: row;
   border-radius: 24px;
   padding: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #inputs {
- width: 360px;
- display: flex;
- flex-direction: column;
- gap: 30px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 #totals {
   font-family: SpaceMonoBold;
-  width: 300px;
+  width: 240px;
   border-radius: 24px;
   background-color: var(--neutral-dark-cyan);
   padding: 30px;
@@ -126,20 +132,34 @@ body {
   color: var(--neutral-gray-cyan);
 }
 
-.input-container {
- background-color: var(--neutral-very-light-gray-cyan);
- color: var(--neutral-gray-cyan);
- padding: 3px;
- display: flex;
- justify-content: space-between;
+#bill-total input {
+  background: url(./images//icon-dollar.svg) left no-repeat,
+    var(--neutral-very-light-gray-cyan);
 }
 
-.input-container img {
- object-fit: contain;
+#people-total input {
+  background: url(./images//icon-person.svg) left no-repeat,
+    var(--neutral-very-light-gray-cyan);
 }
 
-.input-container input {
- width: fit-content;
- background-color: var(--neutral-very-light-gray-cyan);
- color: var(--neutral-gray-cyan);
+input {
+  text-align: right;
+  color: var(--neutral-dark-cyan);
+  padding: 3px;
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  margin-top: 6px;
+}
+
+input::placeholder {
+  color: var(--neutral-gray-cyan);
+}
+
+input:hover {
+  border: 1px solid var(hsl(172, 67%, 45%));
+}
+
+button:hover {
+  background: var(hsl(172, 67%, 45%));
 }
