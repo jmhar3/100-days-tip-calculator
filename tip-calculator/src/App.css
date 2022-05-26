@@ -132,15 +132,12 @@ body {
 }
 
 #tip-selects input {
-  padding: 3px;
   text-align: center;
-  background-color: var(--neutral-very-light-gray-cyan);
-  color: var(--neutral-gray-cyan);
 }
 
 #bill-total input {
   background: url(./images//icon-dollar.svg) left no-repeat,
-    var(--neutral-very-light-gray-cyan);
+    
 }
 
 #people-total input {
@@ -151,19 +148,20 @@ body {
 input {
   text-align: right;
   color: var(--neutral-dark-cyan);
-  padding: 3px;
   display: flex;
   justify-content: space-between;
-  width: fit-content;
   margin-top: 6px;
+  border: 2px solid  var(--neutral-very-light-gray-cyan);
+  background-color: var(--neutral-very-light-gray-cyan);
+  outline: none;
 }
 
 input::placeholder {
   color: var(--neutral-gray-cyan);
 }
 
-input:hover {
-  border: 1px solid var(hsl(172, 67%, 45%));
+input:hover, input:focus {
+  border: 2px solid var(hsl(172, 67%, 45%));
 }
 
 button:hover {

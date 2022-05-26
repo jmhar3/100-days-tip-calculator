@@ -16,6 +16,8 @@ function App() {
 
   const [calculatorValues, setCalculatorValues] = useState(baseValues);
 
+  const [selected, setSelected] = useState(null);
+
   const { bill, tip, people } = calculatorValues;
 
   const setBill = useCallback(
@@ -47,9 +49,8 @@ function App() {
 
   const onResetClick = useCallback(() => {
     setCalculatorValues(baseValues);
+    setSelected(null)
   }, [setCalculatorValues]);
-
-  console.log(calculatorValues);
 
   const tipAmount = useMemo(() => {
     if (bill && tip && people) {
@@ -75,7 +76,7 @@ function App() {
     <div id="calculator" className="container">
       <div id="inputs" className="container">
         <BillTotal bill={calculatorValues.bill} setBill={setBill} />
-        <TipSelect setTip={setTip} />
+        <TipSelect setTip={setTip} selected={selected} setSelected={setSelected} />
         <PeopleTotal people={calculatorValues.people} setPeople={setPeople} />
       </div>
       <div id="totals" className="container">
