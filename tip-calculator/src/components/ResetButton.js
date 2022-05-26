@@ -1,5 +1,5 @@
-export const ResetButton = ({onResetClick}) => {
+export const ResetButton = ({onResetClick, isResetDisabled}) => {
  return (
-   <button onClick={onResetClick}>RESET</button>
+   <button disabled={!!isResetDisabled} onClick={onResetClick}>RESET</button>
  );
 };

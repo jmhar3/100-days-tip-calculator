@@ -67,6 +67,10 @@ function App() {
     }
   }, [bill, tip, people]);
 
+  const isResetDisabled = useMemo(() => {
+    return tipAmount === "0.00";
+  }, [tipAmount]);
+
   return (
     <div id="calculator" className="container">
       <div id="inputs" className="container">
@@ -77,7 +81,10 @@ function App() {
       <div id="totals" className="container">
         <TipPerPerson tipAmount={tipAmount} />
         <TotalPerPerson totalAmount={totalAmount} />
-        <ResetButton onResetClick={onResetClick} />
+        <ResetButton
+          onResetClick={onResetClick}
+          isResetDisabled={isResetDisabled}
+        />
       </div>
     </div>
   );
