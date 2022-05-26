@@ -80,7 +80,13 @@ body {
   padding: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  justify-content: space-between;
+}
+
+#totals > :first-child {
+ display: flex;
+ flex-direction: column;
+ gap: 30px;
 }
 
 #totals h1 {
@@ -99,7 +105,7 @@ body {
   background-color: var(--primary-cyan);
   width: 100%;
   color: var(--neutral-dark-cyan);
-  padding: 12px;
+  padding: 6px;
 }
 
 .per-person {

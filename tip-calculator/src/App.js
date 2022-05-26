@@ -79,8 +79,10 @@ function App() {
         <PeopleTotal people={calculatorValues.people} setPeople={setPeople} />
       </div>
       <div id="totals" className="container">
-        <TipPerPerson tipAmount={tipAmount} />
-        <TotalPerPerson totalAmount={totalAmount} />
+        <div>
+          <TipPerPerson tipAmount={tipAmount} />
+          <TotalPerPerson totalAmount={totalAmount} />
+        </div>
         <ResetButton
           onResetClick={onResetClick}
           isResetDisabled={isResetDisabled}
