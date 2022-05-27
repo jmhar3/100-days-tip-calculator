@@ -9,16 +9,17 @@ import { useCallback, useMemo, useState } from "react";
 
 function App() {
   const baseValues = {
-    bill: undefined,
-    tip: undefined,
-    people: undefined,
+    bill: "",
+    tip: "",
+    people: "",
+    customTip: "",
   };
 
   const [calculatorValues, setCalculatorValues] = useState(baseValues);
 
   const [selected, setSelected] = useState(null);
 
-  const { bill, tip, people } = calculatorValues;
+  const { bill, tip, people, customTip } = calculatorValues;
 
   const setBill = useCallback(
     (value) => {
@@ -38,6 +39,15 @@ function App() {
     [setCalculatorValues]
   );
 
+  const setCustomTip = useCallback(
+    (value) => {
+      setCalculatorValues((calculatorValues) => {
+        return { ...calculatorValues, customTip: value };
+      });
+    },
+    [setCalculatorValues]
+  );
+
   const setPeople = useCallback(
     (value) => {
       setCalculatorValues((calculatorValues) => {
@@ -49,24 +59,26 @@ function App() {
 
   const onResetClick = useCallback(() => {
     setCalculatorValues(baseValues);
-    setSelected(null)
+    setSelected(null);
   }, [setCalculatorValues]);
 
   const tipAmount = useMemo(() => {
-    if (bill && tip && people) {
-      return ((parseFloat(bill) * (tip / 100)) / people).toFixed(2);
+   const selectedTip = selected === "custom" ? customTip : tip
+    if (bill && selectedTip && people) {
+      return ((parseFloat(bill) * (selectedTip / 100)) / people).toFixed(2);
     } else {
       return "0.00";
     }
-  }, [bill, tip, people]);
+  }, [bill, tip, people, customTip]);
 
   const totalAmount = useMemo(() => {
-    if (bill && tip && people) {
-      return ((bill * ((tip / 100) + 1)) / people).toFixed(2);
+   const selectedTip = selected === "custom" ? customTip : tip
+    if (bill && selectedTip && people) {
+      return ((bill * ((selectedTip / 100) + 1)) / people).toFixed(2);
     } else {
       return "0.00";
     }
-  }, [bill, tip, people]);
+  }, [bill, tip, people, customTip]);
 
   const isResetDisabled = useMemo(() => {
     return tipAmount === "0.00";
@@ -76,7 +88,14 @@ function App() {
     <div id="calculator" className="container">
       <div id="inputs" className="container">
         <BillTotal bill={calculatorValues.bill} setBill={setBill} />
-        <TipSelect setTip={setTip} selected={selected} setSelected={setSelected} tip={calculatorValues.tip} />
+        <TipSelect
+          setTip={setTip}
+          selected={selected}
+          setSelected={setSelected}
+          tip={calculatorValues.tip}
+          customTip={calculatorValues.customTip}
+          setCustomTip={setCustomTip}
+        />
         <PeopleTotal people={calculatorValues.people} setPeople={setPeople} />
       </div>
       <div id="totals" className="container">

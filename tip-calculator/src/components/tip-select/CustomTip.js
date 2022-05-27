@@ -1,6 +1,6 @@
 import { useMemo, useCallback } from "react";
 
-export const CustomTip = ({ onChange, selected, setSelected, tip }) => {
+export const CustomTip = ({ selected, setSelected, customTip, setCustomTip }) => {
   const styles = useMemo(() => {
     return selected === "custom"
       ? { border: "2px solid hsl(172, 67%, 45%)" }
@@ -11,6 +11,15 @@ export const CustomTip = ({ onChange, selected, setSelected, tip }) => {
     setSelected("custom");
     onChange(event);
   });
+  
+  const onChange = useCallback(
+   (event) => {
+     event.target.value === ""
+       ? setCustomTip(0)
+       : setCustomTip(parseInt(event.target.value));
+   },
+   [setCustomTip]
+ );
 
   return (
     <input
@@ -18,7 +27,7 @@ export const CustomTip = ({ onChange, selected, setSelected, tip }) => {
       style={styles}
       placeholder="Custom"
       onChange={onChange}
-      value={tip}
+      value={customTip}
     />
   );
 };

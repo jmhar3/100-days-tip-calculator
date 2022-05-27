@@ -2,7 +2,7 @@ import { useCallback, useMemo } from "react";
 
 export const TipButton = ({ percentage, setTip, selected, setSelected }) => {
   const onClick = useCallback(() => {
-    setTip(percentage / 100);
+    setTip(percentage);
     setSelected(percentage)
   }, [setTip]);
 
