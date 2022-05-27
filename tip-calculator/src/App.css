@@ -108,6 +108,10 @@ body {
   padding: 6px;
 }
 
+#totals button:hover {
+ background-color: hsl(172, 71%, 70%);
+}
+
 .per-person {
   display: flex;
   justify-content: space-between;
