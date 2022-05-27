@@ -8,8 +8,8 @@ export const TipSelect = (props) => {
   const onChange = useCallback(
     (event) => {
       event.target.value === ""
-        ? setTip(0.0)
-        : setTip(parseInt(event.target.value) / 100);
+        ? setTip(0)
+        : setTip(parseInt(event.target.value));
     },
     [setTip]
   );

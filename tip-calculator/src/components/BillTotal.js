@@ -4,7 +4,7 @@ export const BillTotal = ({ setBill, bill }) => {
   const onChange = useCallback(
     (event) => {
       event.target.value === ""
-        ? setBill(0)
+        ? setBill(undefined)
         : setBill(parseInt(event.target.value));
     },
     [setBill]
@@ -13,7 +13,7 @@ export const BillTotal = ({ setBill, bill }) => {
   return (
     <div id="bill-total">
       <p>Bill</p>
-      <input type="number" placeholder="0" onChange={onChange} />
+      <input type="number" value={bill} placeholder="0" onChange={onChange} />
     </div>
   );
 };

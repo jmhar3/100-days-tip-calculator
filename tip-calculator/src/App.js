@@ -9,9 +9,9 @@ import { useCallback, useMemo, useState } from "react";
 
 function App() {
   const baseValues = {
-    bill: 0,
-    tip: 0.0,
-    people: 0,
+    bill: undefined,
+    tip: undefined,
+    people: undefined,
   };
 
   const [calculatorValues, setCalculatorValues] = useState(baseValues);
@@ -54,7 +54,7 @@ function App() {
 
   const tipAmount = useMemo(() => {
     if (bill && tip && people) {
-      return ((parseFloat(bill) * tip) / people).toFixed(2);
+      return ((parseFloat(bill) * (tip / 100)) / people).toFixed(2);
     } else {
       return "0.00";
     }
@@ -62,7 +62,7 @@ function App() {
 
   const totalAmount = useMemo(() => {
     if (bill && tip && people) {
-      return ((bill * (tip + 1)) / people).toFixed(2);
+      return ((bill * ((tip / 100) + 1)) / people).toFixed(2);
     } else {
       return "0.00";
     }
@@ -76,7 +76,7 @@ function App() {
     <div id="calculator" className="container">
       <div id="inputs" className="container">
         <BillTotal bill={calculatorValues.bill} setBill={setBill} />
-        <TipSelect setTip={setTip} selected={selected} setSelected={setSelected} />
+        <TipSelect setTip={setTip} selected={selected} setSelected={setSelected} tip={calculatorValues.tip} />
         <PeopleTotal people={calculatorValues.people} setPeople={setPeople} />
       </div>
       <div id="totals" className="container">

@@ -12,7 +12,7 @@ export const PeopleTotal = ({ setPeople, people }) => {
   return (
     <div id="people-total">
       <p>Number of people</p>
-      <input type="number" placeholder="0" onChange={onChange} />
+      <input type="number" value={people} placeholder="0" onChange={onChange} />
     </div>
   );
 };
