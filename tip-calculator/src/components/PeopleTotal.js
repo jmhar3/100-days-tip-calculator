@@ -13,14 +13,14 @@ export const PeopleTotal = ({ setPeople, people }) => {
     <div id="people-total">
       <span>
         <p>Number of people</p>
-        {!people && <p className="error">Can't be zero</p>}
+        {people === 0 && <p className="error">Can't be zero</p>}
       </span>
       <input
         type="number"
         value={people}
         placeholder="0"
         onChange={onChange}
-        style={{ border: !people && "2px solid hsl(12, 81%, 46%)" }}
+        style={{ border: people === 0 && "2px solid hsl(12, 81%, 46%)" }}
       />
     </div>
   );

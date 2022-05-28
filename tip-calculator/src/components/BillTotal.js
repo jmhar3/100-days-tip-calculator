@@ -4,7 +4,7 @@ export const BillTotal = ({ setBill, bill }) => {
   const onChange = useCallback(
     (event) => {
       event.target.value === ""
-        ? setBill(undefined)
+        ? setBill(0)
         : setBill(parseInt(event.target.value));
     },
     [setBill]
@@ -14,7 +14,7 @@ export const BillTotal = ({ setBill, bill }) => {
     <div id="bill-total">
       <span>
         <p>Bill</p>
-        {!bill && <p className="error">Can't be zero</p>}
+        {bill === 0 && <p className="error">Can't be zero</p>}
       </span>
       <input
         type="number"
