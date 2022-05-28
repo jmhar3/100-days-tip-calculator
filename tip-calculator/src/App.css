@@ -109,7 +109,7 @@ body {
 }
 
 #totals button:hover {
- background-color: hsl(172, 71%, 70%);
+  background-color: hsl(172, 71%, 70%);
 }
 
 .per-person {
@@ -140,16 +140,22 @@ body {
 }
 
 #bill-total input {
-  background: url(./images/icon-dollar.svg) left no-repeat,
-  var(--neutral-very-light-gray-cyan);
+  background: url(./images/icon-dollar.svg) left no-repeat;
 }
 
 #people-total input {
-  background: url(./images/icon-person.svg) left no-repeat,
-    var(--neutral-very-light-gray-cyan);
+  background: url(./images/icon-person.svg) left no-repeat;
 }
 
-#bill-total span, #people-total span {
+#bill-total input,
+#people-total input {
+ padding-left: 9px;
+  background-origin: content-box;
+  background-color: var(--neutral-very-light-gray-cyan);
+}
+
+#bill-total span,
+#people-total span {
   display: flex;
   justify-content: space-between;
 }
@@ -174,6 +180,7 @@ input::-webkit-inner-spin-button {
 
 input::placeholder {
   color: var(--neutral-gray-cyan);
+  padding-right: 9px;
 }
 
 input:hover,
@@ -191,5 +198,5 @@ button:disabled {
 }
 
 .error {
- color: hsl(12, 81%, 46%);
+  color: hsl(12, 81%, 46%);
 }
