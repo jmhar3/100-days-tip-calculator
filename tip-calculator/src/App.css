@@ -35,7 +35,7 @@ p {
 
 input,
 button {
-  font-size: 24px;
+  font-size: 21px;
   font-family: SpaceMonoBold;
   border: 0;
   border-radius: 5px;
@@ -124,20 +124,24 @@ body {
   margin-top: 6px;
 }
 
-#tip-selects input,
-#tip-selects button {
-  flex-basis: 30%;
-  width: 30%;
+#tip-selects input {
+  width: 86px;
+  height: 41px;
 }
 
 #tip-selects button {
+ width: 90px;
+ height: 45px;
   background-color: var(--neutral-dark-cyan);
+  border: 2px solid var(--neutral-dark-cyan);
   padding: 3px;
   color: var(--neutral-very-light-gray-cyan);
 }
 
-#tip-selects input {
+#tip-selects input, #tip-selects input::placeholder {
   text-align: center;
+  padding: 0;
+  margin: 0;
 }
 
 #bill-total input {
