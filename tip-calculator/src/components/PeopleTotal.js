@@ -11,8 +11,17 @@ export const PeopleTotal = ({ setPeople, people }) => {
   );
   return (
     <div id="people-total">
-      <p>Number of people</p>
-      <input type="number" value={people} placeholder="0" onChange={onChange} />
+      <span>
+        <p>Number of people</p>
+        {!people && <p className="error">Can't be zero</p>}
+      </span>
+      <input
+        type="number"
+        value={people}
+        placeholder="0"
+        onChange={onChange}
+        style={{ border: !people && "2px solid hsl(12, 81%, 46%)" }}
+      />
     </div>
   );
 };

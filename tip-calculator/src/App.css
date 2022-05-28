@@ -74,7 +74,7 @@ body {
 
 #totals {
   font-family: SpaceMonoBold;
-  width: 240px;
+  width: 300px;
   border-radius: 24px;
   background-color: var(--neutral-dark-cyan);
   padding: 30px;
@@ -149,6 +149,11 @@ body {
     var(--neutral-very-light-gray-cyan);
 }
 
+#bill-total span, #people-total span {
+  display: flex;
+  justify-content: space-between;
+}
+
 input {
   text-align: right;
   color: var(--neutral-dark-cyan);
@@ -158,6 +163,13 @@ input {
   border: 2px solid var(--neutral-very-light-gray-cyan);
   background-color: var(--neutral-very-light-gray-cyan);
   outline: none;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input::placeholder {
@@ -178,12 +190,6 @@ button:disabled {
   opacity: 0.3;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input {
-  -moz-appearance: textfield;
+.error {
+ color: hsl(12, 81%, 46%);
 }

@@ -12,8 +12,17 @@ export const BillTotal = ({ setBill, bill }) => {
 
   return (
     <div id="bill-total">
-      <p>Bill</p>
-      <input type="number" value={bill} placeholder="0" onChange={onChange} />
+      <span>
+        <p>Bill</p>
+        {!bill && <p className="error">Can't be zero</p>}
+      </span>
+      <input
+        type="number"
+        value={bill}
+        placeholder="0"
+        onChange={onChange}
+        style={{ border: bill === 0 && "2px solid hsl(12, 81%, 46%)" }}
+      />
     </div>
   );
 };
