@@ -50,6 +50,13 @@ body {
   height: 100%;
 }
 
+#logo {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #calculator {
   height: fit-content;
   width: fit-content;
@@ -60,7 +67,7 @@ body {
   border-radius: 24px;
   padding: 30px;
   position: absolute;
-  top: 50%;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -130,15 +137,22 @@ body {
 }
 
 #tip-selects button {
- width: 90px;
- height: 45px;
+  width: 90px;
+  height: 45px;
   background-color: var(--neutral-dark-cyan);
   border: 2px solid var(--neutral-dark-cyan);
   padding: 3px;
   color: var(--neutral-very-light-gray-cyan);
 }
 
-#tip-selects input, #tip-selects input::placeholder {
+#tip-selects button:hover {
+  color: var(--neutral-dark-cyan);
+  background-color: hsl(172, 71%, 70%);
+  border: 2px solid hsl(172, 71%, 70%);
+}
+
+#tip-selects input,
+#tip-selects input::placeholder {
   text-align: center;
   padding: 0;
   margin: 0;
@@ -154,7 +168,7 @@ body {
 
 #bill-total input,
 #people-total input {
- padding-left: 9px;
+  padding-left: 9px;
   background-origin: content-box;
   background-color: var(--neutral-very-light-gray-cyan);
 }
@@ -191,11 +205,6 @@ input::placeholder {
 input:hover,
 input:focus {
   border: 2px solid var(--primary-cyan);
-}
-
-#tip-selects button:hover {
-  color: var(--neutral-dark-cyan);
-  background-color: hsl(172, 71%, 70%);
 }
 
 button:disabled {

@@ -1,11 +1,13 @@
+import { useCallback, useMemo, useState } from "react";
+
 import "./App.css";
+import splitterLogo from './images/logo.svg'
 import { BillTotal } from "./components/BillTotal";
 import { TipSelect } from "./components/tip-select/TipSelect";
 import { PeopleTotal } from "./components/PeopleTotal";
 import { TipPerPerson } from "./components/TipPerPerson";
 import { TotalPerPerson } from "./components/TotalPerPerson";
 import { ResetButton } from "./components/ResetButton";
-import { useCallback, useMemo, useState } from "react";
 
 function App() {
   const baseValues = {
@@ -85,6 +87,8 @@ function App() {
   }, [tipAmount]);
 
   return (
+   <>
+   <img src={splitterLogo} id="logo"/>
     <div id="calculator" className="container">
       <div id="inputs" className="container">
         <BillTotal bill={calculatorValues.bill} setBill={setBill} />
@@ -109,6 +113,7 @@ function App() {
         />
       </div>
     </div>
+    </>
   );
 }
 
