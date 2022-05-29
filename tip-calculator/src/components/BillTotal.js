@@ -3,9 +3,11 @@ import { useCallback } from "react";
 export const BillTotal = ({ setBill, bill }) => {
   const onChange = useCallback(
     (event) => {
+     if (!isNaN(event.target.value)) {
       event.target.value === ""
         ? setBill(0)
         : setBill(parseInt(event.target.value));
+     }
     },
     [setBill]
   );
@@ -17,7 +19,6 @@ export const BillTotal = ({ setBill, bill }) => {
         {bill === 0 && <p className="error">Can't be zero</p>}
       </span>
       <input
-        type="number"
         value={bill}
         placeholder="0"
         onChange={onChange}

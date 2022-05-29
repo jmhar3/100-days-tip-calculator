@@ -3,9 +3,11 @@ import { useCallback } from "react";
 export const PeopleTotal = ({ setPeople, people }) => {
   const onChange = useCallback(
     (event) => {
+     if (!isNaN(event.target.value)) {
       event.target.value === ""
         ? setPeople(0)
         : setPeople(parseInt(event.target.value));
+     }
     },
     [setPeople]
   );
@@ -16,7 +18,6 @@ export const PeopleTotal = ({ setPeople, people }) => {
         {people === 0 && <p className="error">Can't be zero</p>}
       </span>
       <input
-        type="number"
         value={people}
         placeholder="0"
         onChange={onChange}
